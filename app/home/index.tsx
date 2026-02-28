@@ -1,17 +1,17 @@
+import { Notification } from "@/components/Notification";
+import { Topic } from "@/components/Topic";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons";
 import { SimpleLineIcons } from "@react-native-vector-icons/simple-line-icons";
 import { router } from "expo-router";
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
-  const topic = [];
-  const notifications = [
-    { title: "notification", data: ["NOT_1", "NOT_2", "NOT_3"] },
-  ];
+  const topic = ["topic_1"];
+
   const [openNotifications, setOpenNotification] = useState(false);
 
   function logout() {
@@ -19,7 +19,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView className="h-full bg-white">
+    <SafeAreaView className="flex-1 bg-white">
       <View className="flex-row border-b-2 border-black h-12 items-center">
         <View className="flex-1">
           <Text className="ml-4 text-orange-600 font-bold text-lg">
@@ -42,19 +42,37 @@ export default function App() {
         </View>
       </View>
       {openNotifications ? (
-        <View className="flex-row mt-4 ml-4">
-          <MaterialIcons
-            name="arrow-back-ios"
-            color="black"
-            size={30}
-            onPress={() => setOpenNotification(false)}
-          />
-          <Text className="text-4xl font-bold">Notifications</Text>
+        <View>
+          <View className="flex-row items-center ml-4">
+            <MaterialIcons
+              name="arrow-back-ios"
+              color="black"
+              size={20}
+              onPress={() => setOpenNotification(false)}
+            />
+            <Text className="text-2xl font-bold my-4">Notifications</Text>
+          </View>
+          <ScrollView className="border-gray-600 border-2 h-5/6 h rounded-xl m-2">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <View key={i}>
+                <Notification type={"like"} />
+              </View>
+            ))}
+          </ScrollView>
         </View>
       ) : topic.length ? (
-        <View>
-          <Text>TOPIC 1</Text>
-          <Text>TOPIC 2</Text>
+        <View className="flex-1">
+          <View className="flex-row m-4 items-center">
+            <Text className="text-xl font-bold">Active Topics</Text>
+            <Text className="ml-auto">{topic.length} topic</Text>
+          </View>
+          <ScrollView className="flex-1">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <View key={i}>
+                <Topic />
+              </View>
+            ))}
+          </ScrollView>
         </View>
       ) : (
         <View className="flex-1 justify-center items-center px-6 gap-3">

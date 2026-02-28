@@ -1,9 +1,8 @@
+import { InputText } from "@/components/InputText";
+import { Link, router } from "expo-router";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import { InputText } from "@/components/InputText";
-import { Link, router } from "expo-router";
 
 export default function Register() {
   return (
