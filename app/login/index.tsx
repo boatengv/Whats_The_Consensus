@@ -18,7 +18,7 @@ export default function Login() {
         <InputText label="Email" type="email" />
         <InputText label="Password" type="password" />
         <Pressable
-          onPress={() => router.replace("/home")}
+          onPress={() => router.push("/(tabs)")}
           className="flex justify-center items-center rounded-xl bg-orange-600 px-4 py-2 w-3/4 h-12 mt-6 mb-2"
         >
           <Text className="text-white text-xl font-bold">Sign In</Text>
