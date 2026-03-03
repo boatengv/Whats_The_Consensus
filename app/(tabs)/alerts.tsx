@@ -4,7 +4,7 @@ import { ScrollView, View } from "react-native";
 
 export default function App() {
   return (
-    <ScrollView className="">
+    <ScrollView className="bg-white">
       {Array.from({ length: 8 }).map((_, i) => (
         <View key={i}>
           <Notification type={"like"} />

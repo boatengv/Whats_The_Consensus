@@ -6,10 +6,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "blue",
+        tabBarActiveTintColor: "#f54a00",
         headerShown: false,
-        tabBarInactiveBackgroundColor: "white",
-        tabBarActiveBackgroundColor: "white",
+        tabBarStyle: {
+          backgroundColor: "white",
+        },
       }}
     >
       <Tabs.Screen
@@ -29,6 +30,16 @@ export default function TabLayout() {
             <SimpleLineIcons name="bell" size={25} color="black" />
           ),
           headerShown: true,
+          headerStyle: {
+            backgroundColor: "white",
+            borderBottomColor: "black",
+            borderBottomWidth: 2,
+          },
+          headerTintColor: "black",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 24,
+          },
         }}
       />
       <Tabs.Screen
@@ -39,6 +50,16 @@ export default function TabLayout() {
             <SimpleLineIcons name="user" size={25} color="black" />
           ),
           headerShown: true,
+          headerStyle: {
+            backgroundColor: "white",
+            borderBottomColor: "black",
+            borderBottomWidth: 2,
+          },
+          headerTintColor: "black",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 24,
+          },
         }}
       />
     </Tabs>
