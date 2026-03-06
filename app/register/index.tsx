@@ -25,7 +25,7 @@ export default function Register() {
         <InputText label="Email" type="email" />
         <InputText label="Password" type="password" />
         <Pressable
-          onPress={() => router.push("/(tabs)")}
+          onPress={() => router.replace("/(tabs)")}
           className="flex justify-center items-center rounded-xl bg-orange-600 px-4 py-2 w-3/4 h-12 mt-6 mb-2"
         >
           <Text className="text-white text-xl font-bold">Create Account</Text>
