@@ -1,10 +1,10 @@
-import { Topic } from "@/components/Topic";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { MaterialDesignIcons } from "@react-native-vector-icons/material-design-icons";
 import { router } from "expo-router";
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import NoTopicPage from "../../components/NoTopicPage";
+import TopicPage from "../../components/TopicPage";
 
 export default function App() {
   const topic = ["topic_1"];
@@ -30,31 +30,7 @@ export default function App() {
           />
         </View>
       </View>
-      {topic.length ? (
-        <View className="h-full bg-gray-200">
-          <View className="flex-row m-4 items-center">
-            <Text className="text-xl font-bold">Active Topics</Text>
-            <Text className="ml-auto">{topic.length} topic</Text>
-          </View>
-          <ScrollView className="flex-1">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <View key={i}>
-                <Topic />
-              </View>
-            ))}
-          </ScrollView>
-        </View>
-      ) : (
-        <View className="flex-1 justify-center items-center px-6 gap-3">
-          <Ionicons name="chatbox" size={30} color="gray" />
-          <Text className="text-orange-600 text-2xl font-bold">
-            No active topics
-          </Text>
-          <Text className="text-lg text-gray-500 mb-6">
-            Check back later for new debates to join!
-          </Text>
-        </View>
-      )}
+      {topic.length ? <TopicPage /> : <NoTopicPage />}
     </SafeAreaView>
   );
 }
