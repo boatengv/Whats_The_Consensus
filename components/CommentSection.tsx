@@ -24,7 +24,7 @@ export default function CommentSection({
               size={25}
               name="close-outline"
               className="text-xl absolute top-0 right-0 p-2"
-              color={"red"}
+              color={"#f54a00"}
               onPress={() => closeCommentSection(false)}
             ></Ionicons>
           </View>
@@ -33,6 +33,16 @@ export default function CommentSection({
             <Reply />
             <Comment />
             <Reply />
+            <Comment />
+
+            <Comment />
+            <Reply />
+            <Reply />
+
+            <Comment />
+            <Reply />
+
+            <Comment />
           </ScrollView>
           <View className="flex-row items-center justify-between border-t border-black p-4">
             <Avatar
