@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 
 export default function Reply() {
   return (
-    <View className="flex-row gap-2 mb-4 ml-8">
+    <View className="flex-row gap-2 mb-4 ml-12">
       <Avatar
         avatarStyle={{}}
         containerStyle={{ backgroundColor: "#BDBDBD" }}

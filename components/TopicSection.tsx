@@ -1,12 +1,12 @@
 import { ScrollView, View } from "react-native";
-import { Topic } from "./Topic";
+import TopicItem from "./TopicItem";
 
 export default function TopicSection() {
   return (
     <ScrollView className="flex-1">
       {Array.from({ length: 12 }).map((_, i) => (
         <View key={i}>
-          <Topic />
+          <TopicItem />
         </View>
       ))}
     </ScrollView>

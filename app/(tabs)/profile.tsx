@@ -2,12 +2,11 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Avatar } from "@rneui/themed";
 import React from "react";
 import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <SafeAreaView className="bg-white flex-1">
-      <View className="items-center">
+    <View className="bg-white flex-1">
+      <View className="items-center mt-12">
         <Avatar
           avatarStyle={{}}
           containerStyle={{ backgroundColor: "#BDBDBD" }}
@@ -84,6 +83,6 @@ export default function App() {
           </View>
         ))}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

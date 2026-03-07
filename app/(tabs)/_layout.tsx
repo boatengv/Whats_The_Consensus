@@ -62,6 +62,27 @@ export default function TabLayout() {
           },
         }}
       />
+      <Tabs.Screen
+        name="topic"
+        options={{
+          title: "Topic",
+          href: null,
+          tabBarIcon: ({}) => (
+            <SimpleLineIcons name="user" size={25} color="black" />
+          ),
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: "white",
+            borderBottomColor: "black",
+            borderBottomWidth: 2,
+          },
+          headerTintColor: "black",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 24,
+          },
+        }}
+      />
     </Tabs>
   );
 }

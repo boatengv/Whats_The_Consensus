@@ -3,9 +3,9 @@ import { router } from "expo-router";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 
-export function Topic() {
+export default function TopicItem() {
   function openTopic() {
-    router.replace("/topic");
+    router.replace("/(tabs)/topic");
   }
 
   return (
