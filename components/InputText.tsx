@@ -6,11 +6,17 @@ type InputTextProps = {
   label?: string;
   type: "password" | "email" | "PlainText";
   placeholder?: string;
+  handleInputChange?: (value: string) => void;
 };
 
 type IoniconName = React.ComponentProps<typeof Ionicons>["name"];
 
-export function InputText({ label, type, placeholder }: InputTextProps) {
+export function InputText({
+  label,
+  type,
+  placeholder,
+  handleInputChange,
+}: InputTextProps) {
   function textInputPlaceholderComputed() {
     if (type === "password") return "*********";
     if (type === "email") return "you@example.com";
@@ -43,6 +49,11 @@ export function InputText({ label, type, placeholder }: InputTextProps) {
           className="h-8"
           placeholder={textInputPlaceholderComputed()}
           placeholderTextColor="#A9A9AC"
+          onChangeText={(text) => {
+            handleInputChange?.(text);
+          }}
+          secureTextEntry={type === "password"}
+          keyboardType={type === "email" ? "email-address" : "default"}
         />
       </View>
     </View>

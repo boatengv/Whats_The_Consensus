@@ -1,10 +1,19 @@
 import { InputText } from "@/components/InputText";
-import { Link, router } from "expo-router";
+import { useAuth, useSignUp } from "@clerk/expo";
+import { Link, useRouter } from "expo-router";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
+  const { signUp, errors, fetchStatus } = useSignUp();
+  const { isSignedIn } = useAuth();
+  const router = useRouter();
+
+  const [emailAddress, setEmailAddress] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [code, setCode] = React.useState("");
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1 justify-center items-center px-6 gap-2">
