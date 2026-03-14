@@ -43,7 +43,7 @@ export default function Register() {
       missingFields: signUp.missingFields,
       unverifiedFields: signUp.unverifiedFields,
       requiredFields: signUp.requiredFields,
-    });
+    } );
     if (signUp.status === "complete") {
       await signUp.finalize({
         navigate: ({ session, decorateUrl }) => {
